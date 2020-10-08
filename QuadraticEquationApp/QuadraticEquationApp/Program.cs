@@ -6,7 +6,11 @@ namespace QuadraticEquationApp
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            DataReader reader = new DataReader();
+            QuadraticEquation e = reader.quadraticEquationCoefficientReader();
+            Calculator c = new Calculator(e);
+            e = c.calculateDelta();
+            e.printResult();
         }
     }
 }
